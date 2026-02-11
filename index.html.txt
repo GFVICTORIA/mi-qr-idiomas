@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Selecciona idioma</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Selecciona tu idioma / Select your language / Wähle deine Sprache</h1>
+  <button onclick="window.location.href='documento_es.pdf'">Español</button>
+  <button onclick="window.location.href='documento_en.pdf'">English</button>
+  <button onclick="window.location.href='documento_de.pdf'">Deutsch</button>
+
+  <script>
+    // Detección automática del idioma del navegador
+    const lang = navigator.language || navigator.userLanguage;
+    if(lang.startsWith('es')) window.location.href = 'documento_es.pdf';
+    else if(lang.startsWith('en')) window.location.href = 'documento_en.pdf';
+    else if(lang.startsWith('de')) window.location.href = 'documento_de.pdf';
+    // Si el idioma no es ninguno de los anteriores, se queda en la página para elegir manualmente
+  </script>
+</body>
+</html>
